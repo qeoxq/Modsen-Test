@@ -7,6 +7,10 @@ body, * {
     padding: 0;
 }
 
+html {
+  background-color: #868686;
+}
+
 .page {
   display: flex;
   height: fit-content;
@@ -93,4 +97,35 @@ h1, h4 {
     justify-content: center;
     flex-direction: column;
     row-gap: 10px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .books-group {
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 5%;
+  }
+
+  .books-group-item {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #ffffff70;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+  }
+
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
   }
