@@ -1,18 +1,25 @@
+import axios from "axios";
 import React from "react";
 
-export const Books = ({books}) => {
-    return (
-        <ul className="books-group">
-            {books.map(book => (
-                <li className="books-group-item" key={book.id}>
-                    <img src="" alt="Image"/>
-                    <div className="book-info">
-                        <div className="book-info-category">Category</div>
-                        <div className="book-info-title">Title</div>
-                        <div className="book-info-author">Author</div>
-                    </div>
-                </li>
-            ))}
-        </ul>
-    )
-}
+export const Books = ({ books }) => {
+  return (
+    <ul className="books-group">
+      {books.map((book) => (
+        <li className="books-group-item" key={book.id}>
+          {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail && (
+            <img className="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Image"/>
+          )}
+          <div className="book-info">
+            <div className="book-info-category">
+              {book.volumeInfo.categories && book.volumeInfo.categories[0]}
+            </div>
+            <div className="book-info-title" title={book.volumeInfo.title}>{book.volumeInfo.title}</div>
+            <div className="book-info-author">
+              {book.volumeInfo.authors && book.volumeInfo.authors.join(", ")}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};

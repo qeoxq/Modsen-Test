@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const Form = () => {
-
+    const {query} = useParams();
+    useEffect(() => {
+      console.log(query);
+    }, []);
+    
     return (
         <form>
             <div className="form-group">
                 <div className="search-container">
-                    <input type="text" id="search-input" placeholder="Enter a book title"/>
+                    <input type="text" id="search-input" placeholder="Enter a book title" value={query}/>
                     <button id="search-button">Search</button>
                 </div>
                 <div className="filters-container">
