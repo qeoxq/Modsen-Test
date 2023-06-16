@@ -1,6 +1,6 @@
 import React from "react";
-import {Form} from './Form'
 import { Outlet } from "react-router-dom";
+import {Form} from './Form';
 
 export const Layout = () => {
     return (

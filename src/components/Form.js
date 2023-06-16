@@ -4,19 +4,19 @@ import { useParams } from "react-router-dom";
 export const Form = () => {
     const {query} = useParams();
     useEffect(() => {
-      console.log(query);
-    }, []);
+        console.log(query);
+    }, [query]);
     
     return (
         <form>
             <div className="form-group">
                 <div className="search-container">
-                    <input type="text" id="search-input" placeholder="Enter a book title" value={query}/>
-                    <button id="search-button">Search</button>
+                    <input type="text" id="search-input" placeholder="Enter a book title"/>
+                    <button className="search-button">Search</button>
                 </div>
                 <div className="filters-container">
-                    <label for="category-select">Category:</label>
-                    <select id="category-select">
+                    <label htmlFor="category-select">Category:</label>
+                    <select className="category-select">
                         <option value="all">All</option>
                         <option value="art">Art</option>
                         <option value="biography">Biography</option>
@@ -25,8 +25,8 @@ export const Form = () => {
                         <option value="medical">Medical</option>
                         <option value="poetry">Poetry</option>
                     </select>
-                    <label for="sort-select">Sort by:</label>
-                    <select id="sort-select">
+                    <label htmlFor="sort-select">Sort by:</label>
+                    <select className="sort-select">
                         <option value="relevance">Relevance</option>
                         <option value="newest">Newest</option>
                     </select>
