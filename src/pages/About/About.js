@@ -13,7 +13,6 @@ export const About = () => {
       .get(src)
       .then(data => {
         setBooks(data.data);
-        console.log(data);
       })
     }, [params]);
 

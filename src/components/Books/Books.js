@@ -8,7 +8,7 @@ export const Books = ({ books }) => {
   return (
     <ul className="books-group">
       {books.map((book) => (
-        <Link to={`/about/${book.id}`}>
+        <Link key={book.id} to={`/about/${book.id}`}>
           <li className="books-group-item" key={book.id}>
             {book.volumeInfo.imageLinks?.thumbnail ?
               <img className="book-img" src={book.volumeInfo.imageLinks.thumbnail} alt="Didn't load."/>

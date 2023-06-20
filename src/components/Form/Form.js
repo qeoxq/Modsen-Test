@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 export const Form = () => {
     const {query} = useParams();
     useEffect(() => {
-        console.log(query);
     }, [query]);
     
     return (
