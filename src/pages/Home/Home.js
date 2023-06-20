@@ -17,7 +17,7 @@ export const Home = () => {
   const loadMoreBooks = () => {
     setFetching(true);
     setStartIndex(prev => prev + 30);
-    const src = `https://www.googleapis.com/books/v1/volumes?q=react&startIndex=${startIndex}&maxResults=30&key=AIzaSyA7DhZUW1N6JZ82sdEBhE1nuWWgLkGlUJw`;
+    const src = `https://www.googleapis.com/books/v1/volumes?q=react&startIndex=${startIndex}&maxResults=30&key=${process.env.REACT_APP_API_KEY}`;
     axios
     .get(src)
     .then(data => {

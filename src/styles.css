@@ -53,6 +53,10 @@ h1, h4 {
     color: black;
     width: 25%;
   }
+
+  input[type="text"]:hover, input[type="text"]:focus {
+    outline: none;
+  }
   
   button {
     padding: 8px 16px;
@@ -183,7 +187,6 @@ h1, h4 {
     width: auto;
     height: 500px;
     border-radius: 4px;
-    margin: 30px auto;
   }
 
   .about-image-error {

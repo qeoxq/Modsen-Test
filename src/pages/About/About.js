@@ -3,12 +3,12 @@ import React, {Fragment, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 export const About = () => {
-  const params = useParams()
+  const params = useParams();
 
   const [book, setBooks] = useState(null);
 
   useEffect(() => {
-    const src = `https://www.googleapis.com/books/v1/volumes/${params.bookId}?key=AIzaSyA7DhZUW1N6JZ82sdEBhE1nuWWgLkGlUJw`;
+    const src = `https://www.googleapis.com/books/v1/volumes/${params.bookId}?key=${process.env.REACT_APP_API_KEY}`;
     axios
       .get(src)
       .then(data => {
