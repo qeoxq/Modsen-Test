@@ -1,0 +1,48 @@
+.form-search-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    color: black;
+    width: 25%;
+  }
+
+  input[type="text"]:hover, input[type="text"]:focus {
+    outline: none;
+  }
+
+  .form-filters-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: black;
+  }
+
+  option {
+    color: black;
+  }
+
+  .form-search-container {
+    justify-content: center;
+  }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import './form.css';
 
 export const Form = () => {
     const {category, query, sort} = useParams();
@@ -57,7 +58,7 @@ export const Form = () => {
     return (
         <form>
             <div className="form-group">
-                <div className="search-container">
+                <div className="form-search-container">
                     <input 
                         type="text" 
                         value={stateQuery} 
@@ -65,12 +66,12 @@ export const Form = () => {
                         placeholder="Enter a book title"
                         onChange={(event) => setQuery(event.target.value)}
                     />
-                    <button className="search-button" onClick={onSearch}>Search</button>
+                    <button className="form-search-button" onClick={onSearch}>Search</button>
                 </div>
-                <div className="filters-container">
-                    <label htmlFor="category-select">Category:</label>
+                <div className="form-filters-container">
+                    <label htmlFor="form-category-select">Category:</label>
                     <select 
-                        className="category-select"
+                        className="form-category-select"
                         value={stateCategory} 
                         onChange={(event) => setCategory(event.target.value)}
                     >
@@ -78,9 +79,9 @@ export const Form = () => {
                             <option value={category.option}>{category.text}</option>
                         )}
                     </select>
-                    <label htmlFor="sort-select">Sort by:</label>
+                    <label htmlFor="form-sort-select">Sort by:</label>
                     <select 
-                        className="sort-select"
+                        className="form-sort-select"
                         value={stateSorting} 
                         onChange={(event) => setSorting(event.target.value)}
                     >
