@@ -1,33 +1,92 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const Form = () => {
-    const {query} = useParams();
-    useEffect(() => {
-    }, [query]);
+    const {category, query, sort} = useParams();
+
+    const [stateQuery, setQuery] = useState(query || 'react');
+    const [stateCategory, setCategory] = useState(category || 'all');
+    const [stateSorting, setSorting] = useState(sort || 'newest');
+
+    const categories = [
+        {
+            option: 'all',
+            text: 'All'
+        }, 
+        {
+            option: 'art',
+            text: 'Art'
+        },
+        {
+            option: 'biography',
+            text: 'Biography'
+        },
+        {
+            option: 'computers',
+            text: 'Computers'
+        },        {
+            option: 'history',
+            text: 'History'
+        },
+        {
+            option: 'medical',
+            text: 'Medical'
+        },
+        {
+            option: 'poetry',
+            text: 'Poetry'
+        }
+    ]
+
+    const sortItems = [
+        {
+            option: 'newest',
+            text: 'Newest'
+        },
+        {
+            option: 'relevance',
+            text: 'Relevance'
+        }
+    ]
+
+    const onSearch = (event) => {
+        event.preventDefault();
+        window.location.href = `/${stateCategory}/${stateQuery}/${stateSorting}`;
+    }
     
     return (
         <form>
             <div className="form-group">
                 <div className="search-container">
-                    <input type="text" id="search-input" placeholder="Enter a book title"/>
-                    <button className="search-button">Search</button>
+                    <input 
+                        type="text" 
+                        value={stateQuery} 
+                        id="search-input" 
+                        placeholder="Enter a book title"
+                        onChange={(event) => setQuery(event.target.value)}
+                    />
+                    <button className="search-button" onClick={onSearch}>Search</button>
                 </div>
                 <div className="filters-container">
                     <label htmlFor="category-select">Category:</label>
-                    <select className="category-select">
-                        <option value="all">All</option>
-                        <option value="art">Art</option>
-                        <option value="biography">Biography</option>
-                        <option value="computers">Computers</option>
-                        <option value="history">History</option>
-                        <option value="medical">Medical</option>
-                        <option value="poetry">Poetry</option>
+                    <select 
+                        className="category-select"
+                        value={stateCategory} 
+                        onChange={(event) => setCategory(event.target.value)}
+                    >
+                        {categories.map(category => 
+                            <option value={category.option}>{category.text}</option>
+                        )}
                     </select>
                     <label htmlFor="sort-select">Sort by:</label>
-                    <select className="sort-select">
-                        <option value="relevance">Relevance</option>
-                        <option value="newest">Newest</option>
+                    <select 
+                        className="sort-select"
+                        value={stateSorting} 
+                        onChange={(event) => setSorting(event.target.value)}
+                    >
+                        {sortItems.map(item => 
+                            <option value={item.option}>{item.text}</option>
+                        )}
                     </select>
                 </div>
             </div>

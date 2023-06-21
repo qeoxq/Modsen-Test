@@ -7,7 +7,7 @@ export const Layout = () => {
         <>
         <header className="page">
           <div className="page-content">
-              <h1>Book Search App</h1>
+              <h1>Search for books</h1>
               <Form/>
           </div>
         </header>
