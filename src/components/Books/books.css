@@ -23,6 +23,11 @@ li {
     justify-content: flex-start;
     width: 250px;
     height: 400px;
+    transition: all 0.2s ease-out;
+  }
+
+  .books-group-item:hover {
+    background-color: #ffffff1a;
   }
 
   .book-info {
