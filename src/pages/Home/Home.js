@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {Books} from '../../components/Books/Books'
+import Spinner from '../../components/Spinner/Spinner';
 import './home.css';
 
 export const Home = () => {
@@ -46,7 +47,7 @@ export const Home = () => {
       <Books books={books}/>
       {needMore ?
         <div className='home-load-more-container'>
-          {fetching ? <div>Loading...</div> : <button className='home-load-more-button' onClick={loadMoreBooks}>LOAD MORE</button>}
+          {fetching ? <Spinner /> : <button className='home-load-more-button' onClick={loadMoreBooks}>LOAD MORE</button>}
         </div> 
         :
         <div className='home-total-results'>The end</div>
